@@ -2,23 +2,7 @@
 
 *Read this in other languages: [English](README.en.md)*
 
-这个开源示例项目演示了如何快速集成 Agora 视频 SDK，实现多人视频连麦直播。
-
-在这个示例项目中包含了以下功能：
-
-- 加入通话和离开通话；
-- 主播和观众模式切换；
-- 静音和解除静音；
-- 切换前置摄像头和后置摄像头；
-- 选择分辨率、码率和帧率；
-
-你也可以在这里查看入门版的示例项目：[Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Agora-Android-Tutorial-1to1)
-
-Agora 视频 SDK 支持 iOS / Android / Windows / macOS 等多个平台，你可以查看对应各平台的示例项目：
-
-- [OpenLive-iOS](https://github.com/AgoraIO/OpenLive-iOS)
-- [OpenLive-Windows](https://github.com/AgoraIO/OpenLive-Windows)
-- [OpenLive-macOS](https://github.com/AgoraIO/OpenLive-macOS)
+这个开源示例项目演示了如何使用SDK中提供的新的MeidaIO接口。
 
 ## 运行示例程序
 首先在 [Agora.io 注册](https://dashboard.agora.io/cn/signup/) 注册账号，并创建自己的测试项目，获取到 AppID。将 AppID 填写进 "app/src/main/res/values/strings_config.xml"
