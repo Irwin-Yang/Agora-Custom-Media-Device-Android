@@ -1,24 +1,8 @@
-# OpenLive for Android
+# Custom Media Device for Android
 
 *其他语言版本： [简体中文](README.md)*
 
-The OpenLive for Android Sample App is an open-source demo that will help you get live video broadcasting integrated directly into your Android applications using the Agora Video SDK.
-
-With this sample app, you can:
-
-- Join / leave channel
-- Set role as broadcaster or audience
-- Mute / unmute audio
-- Switch camera
-- Setup resolution, frame rate and bit rate
-
-A tutorial demo can be found here: [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Agora-Android-Tutorial-1to1)
-
-Agora Video SDK supports iOS / Android / Windows / macOS etc. You can find demos of these platform here:
-
-- [OpenLive-iOS](https://github.com/AgoraIO/OpenLive-iOS)
-- [OpenLive-Windows](https://github.com/AgoraIO/OpenLive-Windows)
-- [OpenLive-macOS](https://github.com/AgoraIO/OpenLive-macOS)
+This open source sample project shows how to use the new MeidaIO interface provided in the SDK.
 
 ## Running the App
 First, create a developer account at [Agora.io](https://dashboard.agora.io/signin/), and obtain an App ID. Update "app/src/main/res/values/strings_config.xml" with your App ID.
