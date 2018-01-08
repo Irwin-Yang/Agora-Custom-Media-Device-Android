@@ -11,7 +11,7 @@ First, create a developer account at [Agora.io](https://dashboard.agora.io/signi
 <string name="private_app_id"><#YOUR APP ID#></string>
 ```
 ## Integration mode
-- The first step is to download the signaling SDK in Agora.io SDK. After decompressing, copy the *.jar under the LIBS folder to the app/libs of this project. The arm64-v8a/x86/armeabi-v7a under the LIBS folder is copied to the app/src/main/jniLibs of this project.
+- The first step: download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/en/download/). Unzip the downloaded SDK package and copy ***.jar** under **libs** to **app/libs**, **arm64-v8a**/**x86**/**armeabi-v7a** under **libs** to **app/src/main/jniLibs**.
 
 - The second step: add the following dependency in the "app/build.gradle" file dependency property of this project (the example is added in this code):
 
