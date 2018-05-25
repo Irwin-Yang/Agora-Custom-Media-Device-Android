@@ -1,48 +1,44 @@
 # Agora-Custom-Media-Device-Android
+Read this in other languages: [English](https://github.com/AgoraIO/Agora-Custom-Media-Device-Android/blob/master/README.en.md)
 
+## ç®€ä»‹
 
-*Read this in other languages: [English](README.en.md)*
+æœ¬ç¤ºä¾‹ä»£ç åŸºäº Agora Native SDK ä¸­æ–°å¢çš„ MediaIO æ¥å£å¼€å‘ï¼Œèƒ½å¸®åŠ©å¼€å‘è€…å®ç°ä»¥ä¸‹åŠŸèƒ½ï¼š
 
-Õâ¸ö¿ªÔ´Ê¾ÀıÏîÄ¿ÑİÊ¾ÁËÈçºÎÊ¹ÓÃAgora SDKÖĞÌá¹©µÄĞÂµÄMediaIO½Ó¿Ú
+1. æ‰‹æœºå±å¹•å…±äº«æˆ–è€…æŠ•å°„ç‰¹å®šçš„ View åˆ°è¿œç«¯ã€‚
+2. æœ¬åœ°è§†é¢‘å’Œ Camera ä½œä¸ºå¤–éƒ¨æ•°æ®æºï¼Œæœ¬åœ°æ˜¾ç¤ºå¹¶æ¨é€è§†é¢‘æˆ– Camera æ•°æ®åˆ°è¿œç«¯ï¼›åŸºäº MediaIO æ¥å£ï¼Œå®ç°é¢‘é“å†…è§†é¢‘æºåŠ¨æ€åˆ‡æ¢ã€‚
 
-ÔÚÕâ¸öÊ¾ÀıÏîÄ¿ÖĞ£¬Ê¹ÓÃMediaIO½Ó¿ÚÊµÏÖÁËÒÔÏÂÁ½¸ö¹¦ÄÜ£º
+åœ¨è¿è¡Œæœ¬ Demo å‰ï¼Œä½ å¯ä»¥ï¼š
 
-1¡¢ÊµÏÖ¹²ÏíÊÖ»úÆÁÄ»»òÕßÍ¶ÉäÌØ¶¨µÄViewµ½Ô¶¶Ë¡£
+* æŸ¥çœ‹ Agora Native SDK çš„å…¥é—¨ç¤ºä¾‹ä»£ç ï¼š[Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Agora-Android-Tutorial-1to1)
+* æŸ¥çœ‹ Android å¹³å°ä½¿ç”¨æ—§æ¥å£å®ç°å±å¹•å…±äº«çš„ç¤ºä¾‹ä»£ç ï¼š[Agora-Screen-Sharing-Android](https://github.com/AgoraIO-Community/Agora-Screen-Sharing-Android)
+* æŸ¥çœ‹ iOS å¹³å°å®ç°å±å¹•å…±äº«çš„ç¤ºä¾‹ä»£ç ï¼š[Agora-Screen-Sharing-iOS](https://github.com/AgoraIO-Community/Agora-Screen-Sharing-iOS)
 
-2¡¢ÊµÏÖ±¾µØÊÓÆµºÍCamera×÷ÎªÍâ²¿Êı¾İÔ´£¬±¾µØÏÔÊ¾²¢ÍÆËÍÊÓÆµ»òCameraÊı¾İµ½Ô¶¶Ë£»»ùÓÚĞÂµÄMediaIO½Ó¿Ú£¬ÊµÏÖÆµµÀÄÚÊÓÆµÔ´¶¯Ì¬ÇĞ»»¡£
+## å‡†å¤‡å¼€å‘ç¯å¢ƒ
 
-Äã¿ÉÒÔÔÚÕâÀï²é¿´AgoraÊÓÆµSDKµÄÈëÃÅÊ¾ÀıÏîÄ¿£º[Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Agora-Android-Tutorial-1to1)
+* è¯·ä¿è¯ä½ çš„ Android Studio ç‰ˆæœ¬åœ¨ Android Studio 2.0 ä»¥ä¸Š
+* Android çœŸæœºä¸€å°ï¼ˆNexus 5X æˆ–å…¶ä»–è®¾å¤‡ï¼‰
+* ç”±äºéƒ¨åˆ†æ¨¡æ‹Ÿæœºæœ‰åŠŸèƒ½ç¼ºå¤±æˆ–æ€§èƒ½é—®é¢˜ï¼ŒAgora æ¨èä½¿ç”¨çœŸæœº
 
-ÄãÒ²¿ÉÒÔ²é¿´ Android Æ½Ì¨µÄÊ¹ÓÃ¾É½Ó¿ÚÊµÏÖÆÁÄ»¹²ÏíµÄÊ¾ÀıÏîÄ¿£º[Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Agora-Screen-Sharing-Android)
+## è¿è¡Œç¤ºä¾‹ç¨‹åº
+1. åœ¨ Agora.io æ³¨å†Œè´¦å·ï¼Œå¹¶åˆ›å»ºè‡ªå·±çš„æµ‹è¯•é¡¹ç›®ï¼Œè·å– App IDã€‚
+2. ä¸‹è½½æœ¬é¡µç¤ºä¾‹ç¨‹åºã€‚
+3. åœ¨ç¤ºä¾‹ç¨‹åºçš„ *app/src/main/res/values/strings.xml* è·¯å¾„ä¸‹ï¼Œå¡«å…¥è·å–åˆ°çš„ App ID:
 
-ÄãÒ²¿ÉÒÔ²é¿´ iOS Æ½Ì¨µÄÊ¾ÀıÏîÄ¿£º[Agora-Screen-Sharing-iOS](https://github.com/AgoraIO/Agora-Screen-Sharing-iOS)
+	```
+	<string name="agora_app_id"><#YOUR APP ID#></string>
+	```
+4. ç‚¹å‡» [Agora.io SDK](https://www.agora.io/cn/download/) ä¸‹è½½ **è§†é¢‘é€šè¯ + ç›´æ’­ SDK**ï¼Œç„¶åè§£å‹ã€‚
+5. å°† SDK ä¸­ **libs** æ–‡ä»¶å¤¹ä¸‹çš„ ***.jar** æ–‡ä»¶å¤åˆ¶åˆ°æœ¬ç¤ºä¾‹ç¨‹åºçš„ *app/libs* è·¯å¾„ä¸‹ã€‚
+6. å°† SDK ä¸­ **libs** æ–‡ä»¶å¤¹ä¸‹çš„ **arm64-v8a/x86/armeabi-v7a** æ–‡ä»¶å¤åˆ¶åˆ°æœ¬ç¤ºä¾‹ç¨‹åºçš„ *app/src/main/jniLibs* è·¯å¾„ä¸‹ã€‚
+7. ç”¨ Android Studio æ‰“å¼€è¯¥ç¤ºä¾‹é¡¹ç›®ï¼Œè¿æ¥è®¾å¤‡ï¼Œç¼–è¯‘å¹¶è¿è¡Œã€‚ä½ ä¹Ÿå¯ä»¥ä½¿ç”¨ `gradle` ç›´æ¥ç¼–è¯‘è¿è¡Œã€‚
 
-## ÔËĞĞÊ¾Àı³ÌĞò
-Ê×ÏÈÔÚ [Agora.io ×¢²á](https://dashboard.agora.io/cn/signup/) ×¢²áÕËºÅ£¬²¢´´½¨×Ô¼ºµÄ²âÊÔÏîÄ¿£¬»ñÈ¡µ½ AppID¡£½« AppID ÌîĞ´½ø "app/src/main/res/values/strings.xml"
+## è”ç³»æˆ‘ä»¬
+* å®Œæ•´çš„ API æ–‡æ¡£è§ [æ–‡æ¡£ä¸­å¿ƒ](https://docs.agora.io/cn/2.2.1)
+* å¦‚æœåœ¨é›†æˆä¸­é‡åˆ°é—®é¢˜ï¼Œä½ å¯ä»¥åˆ° [å¼€å‘è€…ç¤¾åŒº](https://dev.agora.io/cn/) æé—®
+* å¦‚æœæœ‰å”®å‰å’¨è¯¢é—®é¢˜ï¼Œä½ å¯ä»¥æ‹¨æ‰“ 400 632 6626ï¼Œæˆ–åŠ å…¥å®˜æ–¹ QQ ç¾¤ 12742516 æé—®
+* å¦‚æœéœ€è¦å”®åæŠ€æœ¯æ”¯æŒï¼Œä½ å¯ä»¥åœ¨ [Agora Dashboard](https://dashboard.agora.io/signin?next=%2F) æäº¤å·¥å•
+* å¦‚æœå‘ç°äº†ç¤ºä¾‹ä»£ç çš„ Bugï¼Œæ¬¢è¿æäº¤åˆ° [issue](https://github.com/AgoraIO-Community/Agora-Screen-Sharing-Android/issues)
 
-```
-<string name="agora_app_id"><#YOUR APP ID#></string>
-```
-
-È»ºóÔÚ [Agora.io SDK](https://www.agora.io/cn/download/) ÏÂÔØ **ÊÓÆµÍ¨»° + Ö±²¥ SDK**£¬½âÑ¹ºó½«ÆäÖĞµÄ **libs** ÎÄ¼ş¼ĞÏÂµÄ ***.jar** ¸´ÖÆµ½±¾ÏîÄ¿µÄ **app/libs** ÏÂ£¬ÆäÖĞµÄ **libs** ÎÄ¼ş¼ĞÏÂµÄ **arm64-v8a**/**x86**/**armeabi-v7a** ¸´ÖÆµ½±¾ÏîÄ¿µÄ **app/src/main/jniLibs** ÏÂ¡£
-
-×îºóÓÃ Android Studio ´ò¿ª¸ÃÏîÄ¿£¬Á¬ÉÏÉè±¸£¬±àÒë²¢ÔËĞĞ¡£
-
-Ò²¿ÉÒÔÊ¹ÓÃ `Gradle` Ö±½Ó±àÒëÔËĞĞ¡£
-
-## ÔËĞĞ»·¾³
-- Android Studio 2.0 +
-- ÕæÊµ Android Éè±¸ (Nexus 5X »òÕßÆäËüÉè±¸)
-- ²¿·ÖÄ£ÄâÆ÷»á´æÔÚ¹¦ÄÜÈ±Ê§»òÕßĞÔÄÜÎÊÌâ£¬ËùÒÔÍÆ¼öÊ¹ÓÃÕæ»ú
-
-## ÁªÏµÎÒÃÇ
-
-- ÍêÕûµÄ API ÎÄµµ¼û [ÎÄµµÖĞĞÄ](https://docs.agora.io/cn/)
-- Èç¹ûÔÚ¼¯³ÉÖĞÓöµ½ÎÊÌâ, Äã¿ÉÒÔµ½ [¿ª·¢ÕßÉçÇø](https://dev.agora.io/cn/) ÌáÎÊ
-- Èç¹ûÓĞÊÛÇ°×ÉÑ¯ÎÊÌâ, ¿ÉÒÔ²¦´ò 400 632 6626£¬»ò¼ÓÈë¹Ù·½QÈº 12742516 ÌáÎÊ
-- Èç¹ûĞèÒªÊÛºó¼¼ÊõÖ§³Ö, Äã¿ÉÒÔÔÚ [Agora Dashboard](https://dashboard.agora.io) Ìá½»¹¤µ¥
-- Èç¹û·¢ÏÖÁËÊ¾Àı´úÂëµÄ bug, »¶Ó­Ìá½» [issue](https://github.com/AgoraIO/Agora-Screen-Sharing-Android/issues)
-
-## ´úÂëĞí¿É
-
+## ä»£ç è®¸å¯
 The MIT License (MIT).
