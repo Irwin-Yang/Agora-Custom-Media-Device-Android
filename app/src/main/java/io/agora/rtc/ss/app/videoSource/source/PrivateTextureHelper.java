@@ -2,6 +2,7 @@ package io.agora.rtc.ss.app.videoSource.source;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
+import android.opengl.GLSurfaceView;
 import android.util.Log;
 import android.view.TextureView;
 
@@ -13,6 +14,8 @@ import io.agora.rtc.mediaio.BaseVideoRenderer;
 import io.agora.rtc.mediaio.IVideoSink;
 import io.agora.rtc.mediaio.MediaIO;
 import io.agora.rtc.video.AgoraVideoFrame;
+import jp.co.cyberagent.android.gpuimage.GPUImagePixelationFilter;
+import jp.co.cyberagent.android.gpuimage.GPUImageRenderer;
 
 /**
  * Created by keke on 2017/12/29.
@@ -29,11 +32,18 @@ public class PrivateTextureHelper implements IVideoSink, TextureView.SurfaceText
 
     private TextureView mTextureView;
 
+    private String DEBUG_TAG;
 
     public PrivateTextureHelper(Context context, TextureView view) {
         mTextureView = view;
         mRender = new BaseVideoRenderer(TAG);
         mRender.setRenderView(mTextureView, this);
+    }
+
+
+    public PrivateTextureHelper setDebugTag(String tag) {
+        DEBUG_TAG = tag;
+        return this;
     }
 
     public void init(EglBase.Context sharedContext) {
@@ -47,10 +57,12 @@ public class PrivateTextureHelper implements IVideoSink, TextureView.SurfaceText
     }
 
     public void setBufferType(MediaIO.BufferType bufferType) {
+//        mRender.setBufferType(MediaIO.BufferType.BYTE_ARRAY);
         mRender.setBufferType(bufferType);
     }
 
     public void setPixelFormat(MediaIO.PixelFormat pixelFormat) {
+//        mRender.setPixelFormat(MediaIO.PixelFormat.TEXTURE_2D);
         mRender.setPixelFormat(pixelFormat);
     }
 
@@ -113,19 +125,20 @@ public class PrivateTextureHelper implements IVideoSink, TextureView.SurfaceText
 
     @Override
     public void consumeTextureFrame(int texId, int format, int width, int height, int rotation, long ts, float[] matrix) {
-        Log.e(TAG, "consumeTextureFrame");
+        Log.e(DEBUG_TAG, "consumeTextureFrame");
+
         mRender.consume(texId, format, width, height, rotation, ts, matrix);
     }
 
     @Override
     public void consumeByteBufferFrame(ByteBuffer buffer, int format, int width, int height, int rotation, long ts) {
-        Log.e(TAG, "consumeByteBufferFrame");
+        Log.e(DEBUG_TAG, "consumeByteBufferFrame");
         mRender.consume(buffer, format, width, height, rotation, ts);
     }
 
     @Override
     public void consumeByteArrayFrame(byte[] data, int format, int width, int height, int rotation, long ts) {
-        Log.e(TAG, "consumeByteArrayFrame");
+        Log.e(DEBUG_TAG, "consumeByteArrayFrame");
         mRender.consume(data, format, width, height, rotation, ts);
     }
 
@@ -149,5 +162,6 @@ public class PrivateTextureHelper implements IVideoSink, TextureView.SurfaceText
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
         //Log.d(TAG, "onSurfaceTextureUpdated");
     }
+
 
 }

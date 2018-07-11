@@ -233,9 +233,14 @@ public class WorkerThread extends Thread {
         if (start) {
             mRtcEngine.setupLocalVideo(new VideoCanvas(view, VideoCanvas.RENDER_MODE_HIDDEN, uid));
             mRtcEngine.startPreview();
+            mute();
         } else {
             mRtcEngine.stopPreview();
         }
+    }
+
+    public void mute() {
+        mRtcEngine.muteAllRemoteAudioStreams(true);
     }
 
     public static String getDeviceID(Context context) {
@@ -265,6 +270,7 @@ public class WorkerThread extends Thread {
             try {
                 mRtcEngine = RtcEngine.create(mContext, appId, mEngineEventHandler.mRtcEventHandler);
                 //mRtcEngine.setParameters("{\"rtc.log_filter\": 65535}");
+                mRtcEngine.setDefaultMuteAllRemoteVideoStreams(true);
             } catch (Exception e) {
                 log.error(Log.getStackTraceString(e));
                 throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));

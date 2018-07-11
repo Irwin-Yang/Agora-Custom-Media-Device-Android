@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import io.agora.rtc.ss.app.videoSource.ui.GLFilterActivity;
 import io.agora.rtc.ss.app.videoSource.ui.MainActivity;
 import io.agora.rtc.ss.app.sharescreen.ui.ShareScreenActivity;
 
@@ -32,6 +33,11 @@ public class InitActivity extends Activity {
         Intent intent1 = new Intent(InitActivity.this,
                 ShareScreenActivity.class);
         startActivity(intent1);
+    }
+
+    public void onTestFilterClick(View view) {
+        Intent intent = new Intent(this, GLFilterActivity.class);
+        startActivity(intent);
     }
 
 

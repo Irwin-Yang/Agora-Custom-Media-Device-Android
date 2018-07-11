@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "io.agora.rtc.ss.app"
@@ -22,14 +22,13 @@ android {
 }
 
 dependencies {
-    compile 'io.agora.rtc:full-sdk:2.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'io.agora.rtc:full-sdk:2.2.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     //compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation 'junit:junit:4.12'
+    implementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     //add ex
     implementation 'com.android.support:appcompat-v7:25.3.0'
     implementation 'com.android.support:support-v4:25.3.0'
@@ -41,6 +40,7 @@ dependencies {
         // workaround issue #73
         exclude group: 'com.google.android', module: 'android'
     }
-
-    androidTestImplementation 'com.jayway.android.robotium:robotium-solo:5.6.3'
+    implementation 'com.jayway.android.robotium:robotium-solo:5.6.3'
+    implementation project(':library')
+    implementation project(':fastImageProcessing')
 }

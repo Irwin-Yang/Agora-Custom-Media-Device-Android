@@ -1,5 +1,6 @@
 package io.agora.rtc.ss.app.videoSource.ui;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import io.agora.rtc.Constants;
+import io.agora.rtc.RtcEngine;
 import io.agora.rtc.ss.app.BaseActivity;
 import io.agora.rtc.ss.app.R;
 import io.agora.rtc.ss.app.rtcEngine.ConstantApp;
@@ -38,8 +40,11 @@ public class MainActivity extends BaseActivity {
             public void afterTextChanged(Editable s) {
                 boolean isEmpty = s.toString().isEmpty();
                 findViewById(R.id.button_join).setEnabled(!isEmpty);
+                findViewById(R.id.button_joinBlur).setEnabled(!isEmpty);
+                findViewById(R.id.button_join_test).setEnabled(!isEmpty);
             }
         });
+        textRoomName.setText("12");
     }
 
     @Override
@@ -48,16 +53,24 @@ public class MainActivity extends BaseActivity {
 
 
     public void onClickJoin(View view) {
-        MainActivity.this.forwardToLiveRoom(Constants.CLIENT_ROLE_BROADCASTER);
+        MainActivity.this.forwardToLiveRoom(Constants.CLIENT_ROLE_BROADCASTER, PrivateTextureViewActivity.class);
     }
 
-    public void forwardToLiveRoom(int cRole) {
+    public void onClickJoinBlur(View view) {
+        MainActivity.this.forwardToLiveRoom(Constants.CLIENT_ROLE_BROADCASTER, PrivateGLViewActivity.class);
+    }
+
+    public void onClickJoinTest(View view) {
+        MainActivity.this.forwardToLiveRoom(Constants.CLIENT_ROLE_BROADCASTER, TestRenderActivity.class);
+    }
+
+    public void forwardToLiveRoom(int cRole, Class<? extends Activity> activity) {
         final EditText v_room = (EditText) findViewById(R.id.room_name);
         final EditText video_path = (EditText) findViewById(R.id.video_path);
         String room = v_room.getText().toString();
         String videoPath = video_path.getText().toString();
         //Intent i = new Intent(MainActivity.this, LiveRoomActivity.class);
-        Intent i = new Intent(MainActivity.this, PrivateTextureViewActivity.class);
+        Intent i = new Intent(MainActivity.this, activity);
         i.putExtra(ConstantApp.ACTION_KEY_CROLE, cRole);
         i.putExtra(ConstantApp.ACTION_KEY_ROOM_NAME, room);
         i.putExtra(ConstantApp.ACTION_KEY_VIDEO_PATH, videoPath);

@@ -21,9 +21,12 @@ import io.agora.rtc.gl.EglBase;
 import io.agora.rtc.mediaio.AgoraTextureCamera;
 import io.agora.rtc.mediaio.IVideoSink;
 import io.agora.rtc.mediaio.IVideoSource;
+import io.agora.rtc.mediaio.MediaIO;
 import io.agora.rtc.ss.app.BaseActivity;
 import io.agora.rtc.ss.app.R;
 import io.agora.rtc.ss.app.videoSource.source.AgoraLocalVideoSource;
+import io.agora.rtc.ss.app.videoSource.source.MyBlurRender;
+import io.agora.rtc.ss.app.videoSource.source.MyCameraTextureSource;
 import io.agora.rtc.ss.app.videoSource.source.PrivateTextureHelper;
 import io.agora.rtc.ss.app.rtcEngine.AGEventHandler;
 import io.agora.rtc.ss.app.rtcEngine.ConstantApp;
@@ -60,7 +63,7 @@ public class PrivateTextureViewActivity extends BaseActivity implements AGEventH
         mUsers = new HashMap<>();
         mRemoteTextureView = (TextureView) findViewById(R.id.textureView2);
         ;
-        mRemoteRender = new PrivateTextureHelper(this, mRemoteTextureView);
+        mRemoteRender = new PrivateTextureHelper(this, mRemoteTextureView).setDebugTag("RemoteRender");
 
         SeekBarCallBack seekBarCallBack = new SeekBarCallBack();
         mAlphaSeekBar = (SeekBar) findViewById(R.id.seekBar);
@@ -103,7 +106,7 @@ public class PrivateTextureViewActivity extends BaseActivity implements AGEventH
         }
         mLocalTextureView = new TextureView(this);
         container.addView(mLocalTextureView);
-        mRender = new PrivateTextureHelper(this, mLocalTextureView);
+        mRender = new PrivateTextureHelper(this, mLocalTextureView).setDebugTag("LocalRender");
         ((PrivateTextureHelper) mRender).init(((AgoraLocalVideoSource) mVideoSource).getEglContext());
         ((PrivateTextureHelper) mRender).setBufferType(TEXTURE);
         ((PrivateTextureHelper) mRender).setPixelFormat(TEXTURE_OES);
@@ -129,7 +132,7 @@ public class PrivateTextureViewActivity extends BaseActivity implements AGEventH
 
     public void onFirstRemoteVideoDecoded(final int uid, final int width, final int height, final int elapsed) {
         Log.d(TAG, "onFirstRemoteVideoDecoded");
-        if(uid!=config().mUid){
+        if (uid != config().mUid) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -167,8 +170,8 @@ public class PrivateTextureViewActivity extends BaseActivity implements AGEventH
         mUsers.put(uid, true);
 
         ((PrivateTextureHelper) mRemoteRender).init(null);
-        ((PrivateTextureHelper) mRemoteRender).setBufferType(BYTE_ARRAY);
-        ((PrivateTextureHelper) mRemoteRender).setPixelFormat(I420);
+        ((PrivateTextureHelper) mRemoteRender).setBufferType(MediaIO.BufferType.BYTE_ARRAY);
+        ((PrivateTextureHelper) mRemoteRender).setPixelFormat(MediaIO.PixelFormat.RGBA);
         worker().addRemoteRender(uid, mRemoteRender);
     }
 
@@ -223,7 +226,7 @@ public class PrivateTextureViewActivity extends BaseActivity implements AGEventH
             sharedContext = ((AgoraLocalVideoSource) mVideoSource).getEglContext();
             container.getLayoutParams().width = wm.getDefaultDisplay().getWidth();
         }
-        mRender = new PrivateTextureHelper(this, mLocalTextureView);
+        mRender = new PrivateTextureHelper(this, mLocalTextureView).setDebugTag("LocalRender");
         ((PrivateTextureHelper) mRender).init(sharedContext);
         ((PrivateTextureHelper) mRender).setBufferType(TEXTURE);
         ((PrivateTextureHelper) mRender).setPixelFormat(TEXTURE_OES);

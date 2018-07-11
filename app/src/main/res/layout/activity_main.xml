@@ -44,5 +44,25 @@
             android:enabled="false"
             android:onClick="onClickJoin"
             android:text="Join Channel" />
+
+        <Button
+            android:id="@+id/button_joinBlur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:enabled="false"
+            android:onClick="onClickJoinBlur"
+            android:text="Join Blur Channel" />
+
+        <Button
+            android:id="@+id/button_join_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:enabled="false"
+            android:onClick="onClickJoinTest"
+            android:text="Join Render Test" />
     </LinearLayout>
 </RelativeLayout>
